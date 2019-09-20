@@ -11,16 +11,19 @@ package Sort;
  */
 public class InsertionSort {
     public void insertionSort(int[] n){
-        for (int i = 1; i < n.length - 1; i++) {
+        for (int i = 1; i < n.length; i++) {
             int v = n[i];
             int p = i;
             while((p > 0)&&(v < n[p-1])){
-                n[p - 1] = n[p];
+                n[p] = n[p - 1];
                 p--;
             }
             if(p!=i){
                 n[p] = v;
             }
+        }
+        for (int i:n ){
+            System.out.print(i + " ");
         }
     }
 }
