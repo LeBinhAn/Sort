@@ -28,23 +28,31 @@ public class Main {
         SelectionSort sl = new SelectionSort();
         InsertionSort is = new InsertionSort();
         BubbleSort    bs = new BubbleSort();
+        HeapSort      hs = new HeapSort();
         System.out.println(" ");
-        System.out.println("What do you want? 1. Bubble Sort, 2. Insertion Sort");
+        System.out.println("What do you want? /n/t1. Selection Sort, 2. Insertion Sort /n/t3. Bubble Sort, 4. Heap Sort");
         System.out.print("Your choice is: ");
         int a = checkInput();
         switch(a){
             case 1:
-                System.out.print("This is sorted array: ");
+                System.out.print("This is Selection sorted array: ");
                 sl.selectionSort(array);
                 break;
             case 2:
-                System.out.print("This is sorted array: ");
+                System.out.print("This is Insertion sorted array: ");
                 is.insertionSort(array);
                 break;
             case 3:
-                System.out.print("This is sorted array");
+                System.out.print("This is bubble sorted array");
                 bs.bubbleSort(array);
                 break;
+            case 4:
+                System.out.print("This is Heap sorted array: ");
+                hs.heapSort(array);
+                break;
+            case 5:
+                  break;
+                  
         }            
     }
     static int checkInput(){
