@@ -5,6 +5,7 @@
  */
 package Sort;
 import java.util.Scanner;
+import java.lang.Math;
 
 /**
  *
@@ -12,14 +13,21 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         System.out.println("This is sorting program!");
-        int[] array = {1, 2, 5 , 7, 9, 4, 3};
-        System.out.print("This is your array before sorting: ");
+        System.out.print("Enter your arrays size: ");
+        int size = input.nextInt();       
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = (int) Math.floor(Math.random()*size);
+        }
+        /*System.out.print("This is your array before sorting: ");
         for(int i:array){
             System.out.print(i + " ");
-        }
+        }*/
         SelectionSort sl = new SelectionSort();
         InsertionSort is = new InsertionSort();
+        BubbleSort    bs = new BubbleSort();
         System.out.println(" ");
         System.out.println("What do you want? 1. Bubble Sort, 2. Insertion Sort");
         System.out.print("Your choice is: ");
@@ -32,6 +40,10 @@ public class Main {
             case 2:
                 System.out.print("This is sorted array: ");
                 is.insertionSort(array);
+                break;
+            case 3:
+                System.out.print("This is sorted array");
+                bs.bubbleSort(array);
                 break;
         }            
     }
