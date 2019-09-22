@@ -6,6 +6,7 @@
 package Sort;
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.Date;
 
 /**
  *
@@ -19,8 +20,9 @@ public class Main {
         int size = input.nextInt();       
         int[] array = new int[size];
         for (int i = 0; i < size; i++) {
-            array[i] = (int) Math.floor(Math.random()*size);
-        }
+            array[i] = (int) Math.round(Math.random()*size);
+        }       
+        Date date = new Date();
         /*System.out.print("This is your array before sorting: ");
         for(int i:array){
             System.out.print(i + " ");
@@ -30,13 +32,14 @@ public class Main {
         BubbleSort    bs = new BubbleSort();
         HeapSort      hs = new HeapSort();
         System.out.println(" ");
-        System.out.println("What do you want? /n/t1. Selection Sort, 2. Insertion Sort /n/t3. Bubble Sort, 4. Heap Sort");
+        System.out.println("What do you want? \n\t1. Selection Sort, 2. Insertion Sort \n\t3. Bubble Sort, 4. Heap Sort");
         System.out.print("Your choice is: ");
         int a = checkInput();
+        long start = System.nanoTime();
         switch(a){
-            case 1:
+            case 1:              
                 System.out.print("This is Selection sorted array: ");
-                sl.selectionSort(array);
+                sl.selectionSort(array);      
                 break;
             case 2:
                 System.out.print("This is Insertion sorted array: ");
@@ -51,9 +54,11 @@ public class Main {
                 hs.heapSort(array);
                 break;
             case 5:
-                  break;
-                  
-        }            
+                  break;                  
+        }    
+        long timeDuration = System.nanoTime() - start;
+        System.out.println(" ");
+        System.out.println("Runtime = " + timeDuration/1000000000);
     }
     static int checkInput(){
         Scanner input = new Scanner(System.in);
