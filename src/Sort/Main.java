@@ -31,6 +31,7 @@ public class Main {
         InsertionSort is = new InsertionSort();
         BubbleSort    bs = new BubbleSort();
         HeapSort      hs = new HeapSort();
+        MergeSort     ms = new MergeSort();
         System.out.println(" ");
         System.out.println("What do you want? \n\t1. Selection Sort, 2. Insertion Sort \n\t3. Bubble Sort, 4. Heap Sort");
         System.out.print("Your choice is: ");
@@ -54,7 +55,10 @@ public class Main {
                 hs.heapSort(array);
                 break;
             case 5:
-                  break;                  
+                System.out.println("This is merge sorted array: ");
+                ms.mergeSort(array, 0, array.length-1);
+                ms.print(array);
+                break;                  
         }    
         long timeDuration = System.nanoTime() - start;
         System.out.println(" ");
